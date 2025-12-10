@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="JOGL">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/OneDrive - Cairo University - Students/Desktop/Computer Science 3th/Graphics/Graphics/lib64/JOGL/gluegen-rt.jar!/" />
+      <root url="jar://$USER_HOME$/OneDrive - Cairo University - Students/Desktop/Computer Science 3th/Graphics/Graphics/lib64/JOGL/jogl.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <NATIVE>
+      <root url="file://$USER_HOME$/OneDrive - Cairo University - Students/Desktop/Computer Science 3th/Graphics/Graphics/lib64/JOGL" />
+      <root url="file://$USER_HOME$/OneDrive - Cairo University - Students/Desktop/Computer Science 3th/Graphics/Graphics/lib64/JOGL" />
+      <root url="file://$USER_HOME$/OneDrive - Cairo University - Students/Desktop/Computer Science 3th/Graphics/Graphics/lib64/JOGL" />
+    </NATIVE>
+    <SOURCES />
+  </library>
+</component>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  Air Hockey 2D Game
  CS304 Computer Graphics - Final Project  
  Cairo University - Faculty of Science Department Computer Science 
@@ -92,3 +93,7 @@ Resource management
 
 *Developed for CS304 Computer Graphics Course - Spring 2024*
 Cairo University -  Faculty of Science Department Computer Science 
+=======
+# CS304-AirHockey-The-final-Project
+Air Hockey Game for CS304 Course
+>>>>>>> 8d6f2310bc44b7c66cbe164ab17969a94b8b27e4

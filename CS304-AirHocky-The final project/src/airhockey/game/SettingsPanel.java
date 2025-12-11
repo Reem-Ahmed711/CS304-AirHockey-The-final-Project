@@ -13,7 +13,7 @@ public class SettingsPanel extends JPanel {
     private JButton backButton;
 
     private Runnable onBack;
-    private JLabel backgroundLabel; // أضف هذا المتغير
+    private JLabel backgroundLabel;
 
     public SettingsPanel(Runnable onBack) {
         this.onBack = onBack;
@@ -23,7 +23,6 @@ public class SettingsPanel extends JPanel {
     private void initUI() {
         setLayout(new BorderLayout());
 
-        // Try to load background
         try {
             // Use a simpler approach without custom layout
             ImageIcon bg = null;
@@ -36,13 +35,11 @@ public class SettingsPanel extends JPanel {
                     try {
                         bg = new ImageIcon(getClass().getResource("/images/bakgrounf.png"));
                     } catch (Exception e3) {
-                        // Use gradient background
                     }
                 }
             }
 
             if (bg != null && bg.getImage() != null) {
-                // Create a panel with background image
                 ImageIcon finalBg = bg;
                 JPanel backgroundPanel = new JPanel(new BorderLayout()) {
                     @Override
@@ -66,7 +63,6 @@ public class SettingsPanel extends JPanel {
             System.out.println("Background image error: " + e.getMessage());
         }
 
-        // Use gradient background if no image
         setBackground(new Color(30, 35, 50));
         JPanel contentPanel = createContentPanel();
         add(contentPanel, BorderLayout.CENTER);
@@ -77,7 +73,7 @@ public class SettingsPanel extends JPanel {
         contentPanel.setOpaque(false);
 
         // Title
-        JLabel titleLabel = new JLabel("⚙️ GAME SETTINGS", SwingConstants.CENTER);
+        JLabel titleLabel = new JLabel("GAME SETTINGS", SwingConstants.CENTER);
         titleLabel.setFont(createFont("Segoe UI", Font.BOLD, 36));
         titleLabel.setForeground(new Color(255, 215, 0));
         titleLabel.setBorder(BorderFactory.createEmptyBorder(30, 0, 30, 0));
@@ -89,7 +85,7 @@ public class SettingsPanel extends JPanel {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g.create();
 
-                // Glass effect background
+                // effect background
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 g2d.setColor(new Color(40, 45, 60, 220));
                 g2d.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
@@ -113,21 +109,21 @@ public class SettingsPanel extends JPanel {
 
         // Difficulty setting
         addSettingLabel("AI Difficulty:", settingsPanel, gbc);
-        String[] difficulties = {"EASY 😊", "MEDIUM 😐", "HARD 😠", "EXPERT 👿"};
+        String[] difficulties = {"EASY ", "MEDIUM ", "HARD ", "EXPERT "};
         difficultyCombo = createStyledComboBox(difficulties);
         difficultyCombo.setSelectedIndex(1);
         settingsPanel.add(difficultyCombo, gbc);
 
         // Theme setting
         addSettingLabel("Theme:", settingsPanel, gbc);
-        String[] themes = {"CLASSIC 🏛️", "MODERN 🎮", "DARK 🌙", "ICE ❄️"};
+        String[] themes = {"CLASSIC ", "MODERN", "DARK ", "ICE "};
         themeCombo = createStyledComboBox(themes);
         themeCombo.setSelectedIndex(1);
         settingsPanel.add(themeCombo, gbc);
 
         // Sound settings
-        soundCheck = createStyledCheckBox("🔊 Enable Sound Effects", true);
-        musicCheck = createStyledCheckBox("🎵 Enable Background Music", true);
+        soundCheck = createStyledCheckBox(" Enable Sound Effects", true);
+        musicCheck = createStyledCheckBox(" Enable Background Music", true);
 
         settingsPanel.add(soundCheck, gbc);
         settingsPanel.add(musicCheck, gbc);
@@ -220,9 +216,6 @@ public class SettingsPanel extends JPanel {
         checkBox.setBackground(new Color(40, 45, 60));
         checkBox.setFocusPainted(false);
 
-        // Remove icon loading lines (149 و 150) لأنها تسبب مشاكل
-        // checkBox.setIcon(new ImageIcon(getClass().getResource("/images/unnamed.jpg")));
-        // checkBox.setSelectedIcon(new ImageIcon(getClass().getResource("/images/unnamed (2).png")));
 
         return checkBox;
     }
@@ -246,7 +239,6 @@ public class SettingsPanel extends JPanel {
         slider.setForeground(Color.WHITE);
         slider.setFont(createFont("Segoe UI", Font.PLAIN, 12));
 
-        // Customize slider UI (مبسطة بدون مشاكل)
         try {
             slider.setUI(new javax.swing.plaf.basic.BasicSliderUI(slider) {
                 @Override
@@ -288,7 +280,6 @@ public class SettingsPanel extends JPanel {
                         int thumbX = thumbBounds.x + (thumbBounds.width - thumbSize) / 2;
                         int thumbY = thumbBounds.y + (thumbBounds.height - thumbSize) / 2;
 
-                        // Thumb gradient
                         GradientPaint gradient = new GradientPaint(
                                 thumbX, thumbY, new Color(255, 215, 0),
                                 thumbX + thumbSize, thumbY + thumbSize, new Color(255, 140, 0)
@@ -296,7 +287,6 @@ public class SettingsPanel extends JPanel {
                         g2d.setPaint(gradient);
                         g2d.fillOval(thumbX, thumbY, thumbSize, thumbSize);
 
-                        // Thumb border
                         g2d.setColor(Color.WHITE);
                         g2d.setStroke(new BasicStroke(2));
                         g2d.drawOval(thumbX, thumbY, thumbSize, thumbSize);
@@ -305,12 +295,10 @@ public class SettingsPanel extends JPanel {
 
                 @Override
                 public void paintFocus(Graphics g) {
-                    // Do nothing to remove focus painting
                 }
             });
         } catch (Exception e) {
             System.out.println("Slider UI error: " + e.getMessage());
-            // Use default slider UI if custom fails
         }
 
         return slider;
@@ -368,7 +356,6 @@ public class SettingsPanel extends JPanel {
         return button;
     }
 
-    // Helper method to create fonts safely
     private Font createFont(String name, int style, int size) {
         try {
             return new Font(name, style, size);

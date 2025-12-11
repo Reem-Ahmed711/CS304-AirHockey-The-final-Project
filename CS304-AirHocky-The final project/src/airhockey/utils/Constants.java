@@ -34,7 +34,7 @@ public class Constants {
     // Game
     public static final int WIN_SCORE = 7;
     public static final int GOAL_RESET_DELAY = 1500;
-    // Game states (أضف هذا في Constants.java)
+    // Game states
     public static final int STATE_MENU = 0;
     public static final int STATE_PLAYING = 1;
     public static final int STATE_PAUSED = 2;

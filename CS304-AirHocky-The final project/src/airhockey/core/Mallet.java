@@ -60,9 +60,8 @@ public class Mallet {
             velocityX = 0;
         }
 
-        // تقسيم الملعب نصين
         if (isPlayer1) {
-            // Player 1 (النصف السفلي)
+            // Player 1
             if (y - radius < Constants.TABLE_Y + Constants.TABLE_HEIGHT / 2) {
                 y = Constants.TABLE_Y + Constants.TABLE_HEIGHT / 2 + radius;
                 velocityY = 0;
@@ -72,7 +71,7 @@ public class Mallet {
                 velocityY = 0;
             }
         } else {
-            // Player 2 (النصف العلوي)
+            // Player 2
             if (y - radius < Constants.TABLE_Y) {
                 y = Constants.TABLE_Y + radius;
                 velocityY = 0;

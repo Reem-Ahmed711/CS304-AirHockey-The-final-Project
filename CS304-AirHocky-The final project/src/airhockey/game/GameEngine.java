@@ -28,7 +28,7 @@ public class GameEngine {
     }
 
     private void createMainFrame() {
-        mainFrame = new JFrame("🏒 Air Hockey 2D - CS304 Project");
+        mainFrame = new JFrame("Air Hockey 2D - CS304 Project");
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainFrame.setResizable(false);
 
@@ -104,7 +104,7 @@ public class GameEngine {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(10, 50, 10, 50);
 
-        JLabel titleLabel = new JLabel("🏒 AIR HOCKEY 2D 🏒", SwingConstants.CENTER);
+        JLabel titleLabel = new JLabel(" AIR HOCKEY 2D ", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Impact", Font.BOLD, 64));
         titleLabel.setForeground(new Color(255, 215, 0));
         titleLabel.setBorder(BorderFactory.createCompoundBorder(
@@ -120,7 +120,7 @@ public class GameEngine {
         contentPanel.add(titlePanel, gbc);
 
         Color[] buttonColors = {new Color(30, 144, 255), new Color(50, 205, 50), new Color(255, 140, 0), new Color(220, 20, 60)};
-        String[] buttonTexts = {"🎮 SINGLE PLAYER", "👥 TWO PLAYERS", "⚙️ SETTINGS", "🚪 EXIT"};
+        String[] buttonTexts = {" SINGLE PLAYER", " TWO PLAYERS", "SETTINGS", "EXIT"};
         Runnable[] buttonActions = {
                 () -> showDifficultySelection(true),
                 () -> showDifficultySelection(false),
@@ -136,7 +136,7 @@ public class GameEngine {
             contentPanel.add(button, gbc);
         }
 
-        JPanel instructionPanel = createStyledPanel("🎮 CONTROLS");
+        JPanel instructionPanel = createStyledPanel("CONTROLS");
         instructionPanel.setLayout(new GridLayout(0, 1, 5, 5));
         String[] controls = {
                 "Player 1: WASD or Mouse Movement",

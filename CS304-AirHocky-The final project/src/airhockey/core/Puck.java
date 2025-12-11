@@ -41,9 +41,8 @@ public class Puck {
         // Draw glow effect when moving fast
         float speed = (float)Math.sqrt(velocityX * velocityX + velocityY * velocityY);
 
-        // إصلاح: تأكد أن قيمة Alpha بين 0 و255
-        int alphaValue = (int)(Math.min(speed, 10) * 20); // بين 0 و200
-        alphaValue = Math.max(0, Math.min(255, alphaValue)); // تأكد من المدى
+        int alphaValue = (int)(Math.min(speed, 10) * 20);
+        alphaValue = Math.max(0, Math.min(255, alphaValue));
 
         if (speed > 2) {
             Color glowColor = new Color(255, 255, 200, alphaValue);

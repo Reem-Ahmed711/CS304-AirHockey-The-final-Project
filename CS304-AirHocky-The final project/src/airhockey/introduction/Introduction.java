@@ -33,13 +33,12 @@ public class Introduction {
                 x = (float)Math.random() * 1200;
             }
 
-            // Twinkle effect
             brightness = 0.3f + 0.7f * (float)(0.5f + 0.5f * Math.sin(System.currentTimeMillis() * 0.001 + x));
         }
     }
 
     private static String[] slides = {
-            "🎮 WELCOME TO AIR HOCKEY 2D",
+            " WELCOME TO AIR HOCKEY 2D",
             "A classic arcade game brought to life",
             "Experience realistic physics and smooth controls",
             "Challenge AI opponents or play with friends",
@@ -85,11 +84,10 @@ public class Introduction {
 
                 // Draw title with glow effect
                 g2d.setFont(new Font("Impact", Font.BOLD, 72));
-                String title = "🏒 AIR HOCKEY 2D 🏒";
+                String title = " AIR HOCKEY 2D ";
                 FontMetrics fm = g2d.getFontMetrics();
                 int titleWidth = fm.stringWidth(title);
 
-                // Multiple glow layers
                 for (int i = 10; i > 0; i--) {
                     g2d.setColor(new Color(0, 100, 255, 10 * i));
                     g2d.drawString(title,

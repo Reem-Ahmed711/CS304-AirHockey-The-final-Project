@@ -34,8 +34,8 @@ public class GoalAnimation {
         void update() {
             x += vx;
             y += vy;
-            vy += 0.1f; // gravity
-            size *= 0.98f; // shrink
+            vy += 0.1f;
+            size *= 0.98f;
         }
 
         boolean isAlive() {

@@ -49,8 +49,8 @@ public class GameController {
     // Game states
     private int gameState = Constants.STATE_PLAYING;
 
-    // GameRenderer (كما أضفتها سابقًا)
-    private GameRenderer gameRenderer; // أضيفت هنا
+    // GameRenderer
+    private GameRenderer gameRenderer;
 
     public GameController(GameMode mode, int difficulty, Constants.Theme theme) {
         this.gameMode = mode;
@@ -96,7 +96,6 @@ public class GameController {
         handleInput();
 
         if (gameMode == GameMode.SINGLE_PLAYER && ai != null) {
-            // **!! التعديل هنا: تمرير الوقت الحالي (System.currentTimeMillis()) !!**
             ai.update(player2, puck, System.currentTimeMillis());
         }
 
@@ -114,7 +113,6 @@ public class GameController {
         }
     }
 
-    // ... باقي الكلاس كما هو ...
 
     private void handleInput() {
         // Player 1 controls
@@ -206,14 +204,12 @@ public class GameController {
         }
     }
 
-    // أضف setter method:
     public void setGameRenderer(GameRenderer renderer) {
         this.gameRenderer = renderer;
     }
 
     private void triggerGoalEffects(boolean player1Scored) {
-        // Random chance for power-up
-        if (Math.random() < 0.3) { // 30% chance
+        if (Math.random() < 0.3) {
             activateRandomPowerUp();
         }
     }
@@ -224,10 +220,8 @@ public class GameController {
         powerUpActive = true;
         powerUpEndTime = System.currentTimeMillis() + 5000; // 5 seconds
 
-        // Apply power-up immediately
         switch(activePowerUp) {
             case "SPEED_BOOST":
-                // Applied during collision
                 break;
             case "PUCK_SLOW":
                 puck.setVelocityX(puck.getVelocityX() * 0.5f);
@@ -269,7 +263,6 @@ public class GameController {
         }).start();
     }
 
-    // Public methods
     public void resetGame() {
         player1Score = 0;
         player2Score = 0;

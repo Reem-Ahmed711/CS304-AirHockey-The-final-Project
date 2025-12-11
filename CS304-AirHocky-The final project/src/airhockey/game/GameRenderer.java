@@ -32,7 +32,6 @@ public class GameRenderer extends JPanel {
         super.paintComponent(g);
         Graphics2D g2d = (Graphics2D) g;
 
-        // Enable high-quality rendering
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING,
@@ -119,21 +118,21 @@ public class GameRenderer extends JPanel {
         if (gameController.isPowerUpActive()) {
             renderPowerUpIndicator(g2d);
         }
-        // في نهاية renderUI() method، أضف:
+
         renderControlsHint(g2d);
     }
 
     private void renderPlayerScores(Graphics2D g2d) {
-        // Player 1 score (left side) - MOVED DOWN from y=40 to y=70
+        // Player 1 score (left side)
         renderScore(g2d,
                 "PLAYER 1",
                 gameController.getPlayer1Score(),
                 Constants.PLAYER1_COLOR,
                 50,
-                70, // Changed from 40 to 70
+                70,
                 false);
 
-        // Player 2/AI score (right side) - MOVED DOWN from y=40 to y=70
+        // Player 2/AI score (right side)
         String player2Name = gameController.getGameMode() == GameController.GameMode.SINGLE_PLAYER ?
                 "AI" : "PLAYER 2";
         Color player2Color = gameController.getGameMode() == GameController.GameMode.SINGLE_PLAYER ?
@@ -219,7 +218,7 @@ public class GameRenderer extends JPanel {
 
     private void renderPowerUpIndicator(Graphics2D g2d) {
         int centerX = Constants.WINDOW_WIDTH / 2;
-        int y = 160; // MOVED DOWN from 120 to 160 (below win condition)
+        int y = 160;
 
         // Background with glow
         g2d.setColor(new Color(255, 215, 0, (int)(powerUpGlow * 100)));
@@ -246,13 +245,13 @@ public class GameRenderer extends JPanel {
     }
 
     private void renderGameInfo(Graphics2D g2d) {
-        // Draw semi-transparent info bar at top - HEIGHT INCREASED from 30 to 40
+        // Draw semi-transparent info bar at top
         GradientPaint gradient = new GradientPaint(
                 0, 0, new Color(0, 0, 0, 180),
-                0, 40, new Color(40, 40, 60, 180) // Changed from 30 to 40
+                0, 40, new Color(40, 40, 60, 180)
         );
         g2d.setPaint(gradient);
-        g2d.fillRect(0, 0, Constants.WINDOW_WIDTH, 40); // Changed from 30 to 40
+        g2d.fillRect(0, 0, Constants.WINDOW_WIDTH, 40);
 
         // Game mode and controls info - MOVED DOWN inside the taller bar
         g2d.setFont(new Font("Arial", Font.BOLD, 14));
@@ -353,7 +352,6 @@ public class GameRenderer extends JPanel {
         FontMetrics wm = g2d.getFontMetrics();
         int winnerWidth = wm.stringWidth(winnerText);
 
-        // Text shadow with multiple layers for 3D effect
         for (int i = 5; i > 0; i--) {
             g2d.setColor(new Color(0, 0, 0, 30 * i));
             g2d.drawString(winnerText,
@@ -419,7 +417,7 @@ public class GameRenderer extends JPanel {
     }
 
     private void renderControlsHint(Graphics2D g2d) {
-        // Controls hint at bottom - MOVED UP from y=WINDOW_HEIGHT-15 to y=WINDOW_HEIGHT-10
+        // Controls hint at bottom
         g2d.setFont(new Font("Arial", Font.PLAIN, 12));
         g2d.setColor(new Color(200, 200, 255, 180));
 
@@ -446,7 +444,6 @@ public class GameRenderer extends JPanel {
         }
     }
 
-    // Method to trigger goal animation
     public void triggerGoalAnimation(boolean player1Scored) {
         String scorer;
         Color color;

@@ -5,9 +5,9 @@ import javax.swing.*;
 
 public class  Main {
     public static void main(String[] args) {
-        System.out.println("🏒 Starting Air Hockey 2D - Final Project...");
+        System.out.println(" Starting Air Hockey 2D - Final Project...");
         System.out.println("Developed for CS304 - Computer Graphics");
-        System.out.println("Cairo University - Faculty of Computers and AI");
+        System.out.println("Cairo University - Faculty of Science Department CS");
 
         try {
             // Set native look and feel

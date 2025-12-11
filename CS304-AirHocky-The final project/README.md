@@ -90,7 +90,7 @@ Event-driven programming
 
 Resource management
 
-*Developed for CS304 Computer Graphics Course - Spring 2024*
+*Developed for CS304 Computer Graphics Course - Spring 2025*
 Cairo University -  Faculty of Science Department Computer Science 
 =======
 # CS304-AirHockey-The-final-Project
